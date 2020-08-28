@@ -24,13 +24,23 @@ document.addEventListener('DOMContentLoaded', (event) => {
     // text animation
     CustomEase.create("textappers", "M0,0 C0.5,0 0,1 1,1");
 
-    gsap.from('.start__heading-item', {
-        translateY: '350%',
-        duration: 1.25,
-        stagger: 0.115,
-        ease: 'textappers',
-        delay: .25,
-        rotate: -15});
+    let elementsAppear = gsap.timeline();
+
+    elementsAppear
+        .from('.start__heading-item', {
+            translateY: '350%',
+            duration: 1.25,
+            stagger: 0.115,
+            ease: 'textappers',
+            delay: .25,
+            rotate: -15
+        })
+        .from('.start__scroll-item', {
+            translateY: '-100%',
+            duration: 0.5,
+            ease: 'textappers',
+            opacity: 0
+        });
 
     // first scene
     let firstScene = document.getElementById('firstScene'),
@@ -46,7 +56,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         scrollTrigger: {
             trigger: '#firstScene',
             start: 'top top',
-            end: '250% bottom',
+            end: '400% bottom',
             pin: true,
             scrub: true,
             scroller: "#app-scroll-container"
@@ -95,7 +105,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
             opacity: 1,
             fontSize: 250,
             letterSpacing: 16,
-            duration: 5});
+            duration: 5
+        });
                 
     /* ////////////////////////////////////////////////////////////////////////////// */
 
