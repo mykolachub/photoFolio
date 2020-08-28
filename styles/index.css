@@ -83,6 +83,19 @@ body::after {
     text-transform: uppercase;
     letter-spacing: -5px;
     line-height: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.start__heading-item{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+.start__heading-item span{
+    display: inline-block;
+    transform-origin: right;
 }
 
 /* first */

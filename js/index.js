@@ -1,5 +1,16 @@
 document.addEventListener('DOMContentLoaded', (event) => {
 
+    // text animation
+    CustomEase.create("textappers", "M0,0 C0.5,0 0,1 1,1");
+
+    gsap.from('.start__heading-item', {
+        translateY: '350%',
+        duration: 1.25,
+        stagger: 0.115,
+        ease: 'textappers',
+        delay: .25,
+        rotate: -15});
+
     // first scene
     let firstScene = document.getElementById('firstScene'),
         firstContent = document.getElementById('firstContent'),
