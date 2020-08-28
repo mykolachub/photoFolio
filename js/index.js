@@ -35,12 +35,17 @@ document.addEventListener('DOMContentLoaded', (event) => {
             delay: .25,
             rotate: -15
         })
+        .from('#firstScene', {
+            duration: 1,
+            opacity: 0,
+            ease: 'textappers'
+        }, '-=0.5')
         .from('.start__scroll-item', {
             translateY: '-100%',
-            duration: 0.5,
+            duration: 1.25,
             ease: 'textappers',
             opacity: 0
-        });
+        }, '-=0.5');
 
     // first scene
     let firstScene = document.getElementById('firstScene'),
@@ -59,7 +64,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             end: '400% bottom',
             pin: true,
             scrub: true,
-            scroller: "#app-scroll-container"
+            scroller: "#app-scroll-container",
             //markers: true
         }
     });
