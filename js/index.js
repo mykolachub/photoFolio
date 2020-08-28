@@ -17,30 +17,55 @@ document.addEventListener('DOMContentLoaded', (event) => {
         firstOne = document.getElementById('firstOne'),
         firstSecond = document.getElementById('firstSecond'),
         firstThird = document.getElementById('firstThird');
+        firstFourth = document.getElementById('firstFourth'),
+        firstFifth = document.getElementById('firstFifth'),
         firstText = document.getElementById('firstText');
 
-    let firstAnimation = gsap.timeline()
+    let firstAnimation = gsap.timeline({
+        scrollTrigger: {
+            trigger: '#firstScene',
+            start: 'top top',
+            end: '250% bottom',
+            pin: true,
+            scrub: true,
+            //markers: true
+        }
+    });
+
+    firstAnimation
         .to(firstContent, {
             width: firstScene.offsetWidth,
-            duration: 1})
+            duration: 2})
         .from(firstOne, {
             scale: 1.1,
             opacity: 0,
-            duration: 0.25,
+            duration: 1.5,
             rotate: -10,
-            ease: "power2.in"})
+            })
         .from(firstSecond, {
             scale: 1.1,
             opacity: 0,
-            duration: 0.25,
+            duration: 1.5,
             rotate: 10,
-            ease: "power2.in"})
+            })
         .from(firstThird, {
-                scale: 1.1,
-                opacity: 0,
-                duration: 0.25,
-                rotate: -6,
-                ease: "power2.in"})
+            scale: 1.1,
+            opacity: 0,
+            duration: 1.5,
+            rotate: -6,
+            })
+        .from(firstFourth, {
+            scale: 1.1,
+            opacity: 0,
+            duration: 1.5,
+            rotate: 16,
+            })
+        .from(firstFifth, {
+            scale: 1.1,
+            opacity: 0,
+            duration: 1.5,
+            rotate: -4,
+            })
         .fromTo(firstText, {
             opacity: 0,
             fontSize: 150,
@@ -48,10 +73,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
             opacity: 1,
             fontSize: 250,
             letterSpacing: 16,
-            duration: 2}).pause();
+            duration: 5});
+                
 
-    firstContent.addEventListener('click', () => {
+    /*firstContent.addEventListener('click', () => {
         console.log('firstAnimation: ', firstAnimation);
         firstAnimation.play();
-    });
+    });*/
 });

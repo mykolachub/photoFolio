@@ -98,12 +98,17 @@ body::after {
     transform-origin: right;
 }
 
+.whitespace{
+    width: 100%;
+    height: 90vh;
+    position: relative;
+}
+
 /* first */
 
 .first{
     width: 100%;
     height: auto;
-    padding-top: 90vh;
     overflow: hidden;
 }
 
@@ -126,8 +131,8 @@ body::after {
     height: 100%;
     object-fit: cover;
     display: block;
-    filter: grayscale(1);
     z-index: 10;
+    pointer-events: none;
 }
 
 .first__image-animate,
@@ -137,35 +142,51 @@ body::after {
     left: 50%;
     object-fit: contain;
     transform-origin: center;
+    pointer-events: none;
+}
+
+.first__image-animate{
+    width: 100%;
+    height: 80%;
 }
 
 .first__image-animate1{
-    width: 60%;
-    height: 100%;
     z-index: 11;
     transform: translate(-50%, -50%) rotate(-5deg);
 }
 
 .first__image-animate2{
-    width: 100%;
-    height: 80%;
     z-index: 12;
     transform: translate(-50%, -50%) rotate(5deg);
 }
 
 .first__image-animate3{
-    width: 100%;
-    height: 80%;
     z-index: 13;
     transform: translate(-50%, -50%) rotate(-3deg);
 }
 
-.first__text{
+.first__image-animate4{
     z-index: 14;
+    transform: translate(-50%, -50%) rotate(8deg);
+}
+
+.first__image-animate5{
+    z-index: 15;
+    transform: translate(-50%, -50%) rotate(-2deg);
+}
+
+.first__text{
+    z-index: 16;
     display: inline-block;
     font-size: 20rem;
     transform: translate(-50%, -50%);
     font-family: var(--serif);
     color: var(--blown-light);
     letter-spacing: -10px;
+}
+
+/* footer */
+
+footer{
+    height: 100vh;
 }
