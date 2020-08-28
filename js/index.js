@@ -1,5 +1,26 @@
 document.addEventListener('DOMContentLoaded', (event) => {
 
+    // smooth scroll and fancy scrollbar
+
+    const locoScroll = new LocomotiveScroll({
+        el: document.querySelector("#app-scroll-container"),
+        smooth: true
+    }); 
+
+    locoScroll.on("scroll", ScrollTrigger.update);
+
+    ScrollTrigger.scrollerProxy("#app-scroll-container", {
+        scrollTop(value) {
+            return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
+        }, 
+        getBoundingClientRect() {
+            return {top: 0, left: 0, width: window.innerWidth, height: window.innerHeight};
+        },
+        pinType: document.querySelector("#app-scroll-container").style.transform ? "transform" : "fixed"
+    });
+
+    /* //////////////////////////////////////////////////////////////// */
+
     // text animation
     CustomEase.create("textappers", "M0,0 C0.5,0 0,1 1,1");
 
@@ -28,13 +49,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
             end: '250% bottom',
             pin: true,
             scrub: true,
+            scroller: "#app-scroll-container"
             //markers: true
         }
     });
 
     firstAnimation
         .to(firstContent, {
-            width: firstScene.offsetWidth,
+            width: firstScene.offsetWidth + 20,
             duration: 2})
         .from(firstOne, {
             scale: 1.1,
@@ -75,9 +97,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
             letterSpacing: 16,
             duration: 5});
                 
+    /* ////////////////////////////////////////////////////////////////////////////// */
 
-    /*firstContent.addEventListener('click', () => {
-        console.log('firstAnimation: ', firstAnimation);
-        firstAnimation.play();
-    });*/
+    ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+
+    ScrollTrigger.refresh();
 });

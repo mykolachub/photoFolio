@@ -3,56 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/locomotive-scroll.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Libre+Caslon+Display&display=swap" rel="stylesheet">  
+    <link rel="stylesheet" href="styles/index.css">
     <title>LESKO</title>
 </head>
 <body>
-    <header class="header">
+    <div id="app-scroll-container" class="wrapper">
+        <header class="header">
 
-    </header>
-    <div class="app">
-        <div class="start">
-            <div class="start__heading">
-                <span class="start__heading-item">
-                    <span>pavel </span>
-                    <span>lesko –</span>
-                </span>
+        </header>
+        <div id="app" class="app">
+            <div class="start">
+                <div class="start__heading">
+                    <span class="start__heading-item">
+                        <span>pavel </span>
+                        <span>lesko –</span>
+                    </span>
+                </div>
+                <div class="start__heading">
+                    <span class="start__heading-item">
+                        <span>– photographer</span>
+                    </span>
+                </div>
+                <div class="start__heading">
+                    <span class="start__heading-item"> 
+                        <span>based </span>
+                        <span>in </span>
+                        <span>ukraine</span>
+                    </span>
+                </div>
             </div>
-            <div class="start__heading">
-                <span class="start__heading-item">
-                    <span>– photographer</span>
-                </span>
+            <div class="whitespace">
+    
             </div>
-            <div class="start__heading">
-                <span class="start__heading-item"> 
-                    <span>based </span>
-                    <span>in </span>
-                    <span>ukraine</span>
-                </span>
+            <div id="firstScene" class="first">
+                <div id="firstContent" class="first__content">
+                    <img class="first__image" src="images/firstMain.jpg" alt="mainimage">
+                    <img id="firstOne" src="images/firstOne.jpg" alt="firstOne" class="first__image-animate first__image-animate1">
+                    <img id="firstSecond" src="images/firstSecond.jpg" alt="firstSecond" class="first__image-animate first__image-animate2">
+                    <img id="firstThird" src="images/firstThird.jpg" alt="firstThird" class="first__image-animate first__image-animate3">
+                    <img id="firstFourth" src="images/firstFourth.jpg" alt="firstThird" class="first__image-animate first__image-animate4">
+                    <img id="firstFifth" src="images/firstFifth.jpg" alt="firstThird" class="first__image-animate first__image-animate5">
+                    <span id="firstText" class="first__text">LESKO</span>
+                </div>
             </div>
+            <footer>
+    
+            </footer>
         </div>
-        <div class="whitespace">
-            
-        </div>
-        <div id="firstScene" class="first">
-            <div id="firstContent" class="first__content">
-                <img class="first__image" src="images/firstMain.jpg" alt="mainimage">
-                <img id="firstOne" src="images/firstOne.jpg" alt="firstOne" class="first__image-animate first__image-animate1">
-                <img id="firstSecond" src="images/firstSecond.jpg" alt="firstSecond" class="first__image-animate first__image-animate2">
-                <img id="firstThird" src="images/firstThird.jpg" alt="firstThird" class="first__image-animate first__image-animate3">
-                <img id="firstFourth" src="images/firstFourth.jpg" alt="firstThird" class="first__image-animate first__image-animate4">
-                <img id="firstFifth" src="images/firstFifth.jpg" alt="firstThird" class="first__image-animate first__image-animate5">
-                <span id="firstText" class="first__text">LESKO</span>
-            </div>
-        </div>
-        <footer>
-
-        </footer>
     </div>
-
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
     <script src="js/CustomEase.min.js"></script>
     <script src="js/index.js"></script>
 </body>
