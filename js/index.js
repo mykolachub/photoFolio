@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     firstAnimation
         .to(firstContent, {
-            width: firstScene.offsetWidth + 20,
+            width: firstScene.offsetWidth,
             duration: 2})
         .from(firstOne, {
             scale: 1.1,
