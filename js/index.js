@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             delay: .25,
             rotate: -15
         })
-        .from('#firstScene', {
+        .from('#introScene', {
             duration: 1,
             opacity: 0,
             ease: 'textappers'
@@ -47,19 +47,19 @@ document.addEventListener('DOMContentLoaded', (event) => {
             opacity: 0
         }, '-=0.5');
 
-    // first scene
-    let firstScene = document.getElementById('firstScene'),
-        firstContent = document.getElementById('firstContent'),
-        firstOne = document.getElementById('firstOne'),
-        firstSecond = document.getElementById('firstSecond'),
-        firstThird = document.getElementById('firstThird');
-        firstFourth = document.getElementById('firstFourth'),
-        firstFifth = document.getElementById('firstFifth'),
-        firstText = document.getElementById('firstText');
+    // intro scene
+    let introScene = document.getElementById('introScene'),
+        introContent = document.getElementById('introContent'),
+        introOne = document.getElementById('introOne'),
+        introSecond = document.getElementById('introSecond'),
+        introThird = document.getElementById('introThird');
+        introFourth = document.getElementById('introFourth'),
+        introFifth = document.getElementById('introFifth'),
+        introText = document.getElementById('introText');
 
-    let firstAnimation = gsap.timeline({
+    let introAnimation = gsap.timeline({
         scrollTrigger: {
-            trigger: '#firstScene',
+            trigger: '#introScene',
             start: 'top top',
             end: '400% bottom',
             pin: true,
@@ -69,41 +69,41 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }
     });
 
-    firstAnimation
-        .to(firstContent, {
-            width: firstScene.offsetWidth,
+    introAnimation
+        .to(introContent, {
+            width: introScene.offsetWidth,
             duration: 2})
-        .from(firstOne, {
+        .from(introOne, {
             scale: 1.1,
             opacity: 0,
             duration: 1.5,
             rotate: -10,
             })
-        .from(firstSecond, {
+        .from(introSecond, {
             scale: 1.1,
             opacity: 0,
             duration: 1.5,
             rotate: 10,
             })
-        .from(firstThird, {
+        .from(introThird, {
             scale: 1.1,
             opacity: 0,
             duration: 1.5,
             rotate: -6,
             })
-        .from(firstFourth, {
+        .from(introFourth, {
             scale: 1.1,
             opacity: 0,
             duration: 1.5,
             rotate: 16,
             })
-        .from(firstFifth, {
+        .from(introFifth, {
             scale: 1.1,
             opacity: 0,
             duration: 1.5,
             rotate: -4,
             })
-        .fromTo(firstText, {
+        .fromTo(introText, {
             opacity: 0,
             fontSize: 150,
             letterSpacing: -10}, {
