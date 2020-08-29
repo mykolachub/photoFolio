@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     introAnimation
         .to(introContent, {
-            width: introScene.offsetWidth,
+            width: '100%',
             duration: 2})
         .from(introOne, {
             scale: 1.1,
@@ -112,6 +112,39 @@ document.addEventListener('DOMContentLoaded', (event) => {
             letterSpacing: 16,
             duration: 5
         });
+
+    // LATEST WORKS SECTIONS
+
+    let latestLinks = document.querySelectorAll('.latest__image-link');
+
+
+    latestLinks.forEach(element => {
+
+        let latestNameAppear = gsap.timeline();
+
+        //let elementToAnim = element.children[1].children;
+        let elementToAnim = element.querySelectorAll(`.latest__image-text .latest__image-anim`);
+        console.log(elementToAnim);
+        
+        latestNameAppear
+            .from(elementToAnim, {
+                translateY: '350%',
+                duration: 1.25,
+                stagger: 0.115,
+                ease: 'textappers',
+                delay: .05,
+                rotate: -15
+            }).pause();
+
+
+        element.addEventListener('mouseover', () => {
+            latestNameAppear.play();
+        });
+
+        element.addEventListener('mouseout', () => {
+            latestNameAppear.reverse();
+        });
+    });
                 
     /* ////////////////////////////////////////////////////////////////////////////// */
 

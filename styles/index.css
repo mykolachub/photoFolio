@@ -318,8 +318,128 @@ html{
     letter-spacing: -10px;
 }
 
+/* latest works */
+
+.latest{
+    width: 100%;
+    height: auto;
+    padding: 16rem 0;
+}
+
+.latest__content{
+    width: calc(100% - 16rem);
+    height: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-column-gap: 2rem;
+}
+
+.latest__heading{
+    grid-column: 1/7;
+    font-size: 2.4rem;
+    font-family: var(--sans-serif);
+    width: 100%;
+    height: auto;
+    text-transform: uppercase;
+}
+
+.latest__heading-item{
+    display: block;
+}
+
+.latest__heading-item sup{
+    font-size: 0.75em;
+}
+
+.latest__ending{
+    grid-column: 7/-1;
+    font-size: 2.4rem;
+    font-family: var(--sans-serif);
+    width: 100%;
+    height: auto;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: flex-end;
+    align-content: flex-end;
+    flex-direction: column;
+}
+
+.latest__ending-item{
+    display: inline-block;
+    text-align: right;
+}
+
+.latest__image{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.latest__image-link{
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    color: var(--blown-light);
+    text-decoration: none;
+    font-size: 2.4rem;
+    font-family: var(--serif);
+}
+
+.latest__image-text{
+    position: absolute;
+    bottom: 25%;
+    left: 50%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, 50%);
+    overflow: hidden;
+}
+
+.latest__image-text div{
+    overflow: hidden;
+}
+
+.latest__image-text span{
+    display: block;
+    text-align: center;
+    transform-origin: right;
+}
+
+.latest__image1{
+    grid-column: 7/-1;
+}
+
+.latest__image2{
+    grid-column: 2/6;
+    margin-top: -16rem;
+}
+
+.latest__image3{
+    grid-column: 8/12;
+    margin-top: 16rem;
+}
+
+.latest__image4{
+    grid-column: 1/7;
+    margin-top: -16rem;
+}
+
+.latest__image-item{
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    transition: all 1000ms cubic-bezier(.5,0,0,1);
+}
+
+.latest__image-item:hover{
+    transform: scale(1.1);
+}
+
 /* footer */
 
 footer{
     height: 100vh;
+    border-top: 1px solid black;
 }
