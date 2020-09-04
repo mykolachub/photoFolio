@@ -437,6 +437,132 @@ html{
     transform: scale(1.1);
 }
 
+/* selected */
+
+.selected{
+    width: 100%;
+    height: 100vh;
+    border-top: 1px solid black;
+    overflow: hidden;
+}
+
+.selected__wrapper{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.selected__container{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.selected__content{
+    margin: 0 auto; 
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.selected__container-1{
+    top: 0;
+    left: 0;
+}
+
+.selected__container-1 .selected__content{
+}
+
+.selected__container-2{
+    transform: translateX(100%);
+}
+
+.selected__container-2 .selected__content{
+}
+
+.selected__container-3{
+    transform: translateX(200%);
+}
+
+.selected__container-3 .selected__content{
+}
+
+/* selected images and links */
+
+.selected__photos{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    height: 75%;
+    transform: translate(-50%, -50%);
+}
+
+.selected__photos-item{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.selected__text{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
+.selected__headering{
+    grid-row: 1/2;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    font-size: 9.4rem;
+    font-family: var(--serif);
+    text-transform: uppercase;
+    letter-spacing: -5px;
+    line-height: 1;
+    color: white;
+}
+
+.selected__headering-content{
+    position: relative;
+    display: inline-block;
+    padding-bottom: 1rem;
+}
+
+.selected__headering-content::after{
+    position: absolute;
+    content: '';
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-bottom: 2px solid white;
+    transform: scaleX(1.6);
+}
+
+.selected__desc{
+    grid-row: 2/-1;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    font-size: 3.6rem;
+    font-family: var(--sans-serif);
+    text-transform: uppercase;
+    line-height: 1;
+    color: white;
+}
+
+.selected__desc-content{
+    margin-top: 1rem;
+    display: inline-block;
+}
+
+/* ratio 0,80006902105142068330840906476475 = 0.8 */
+
 /* footer */
 
 footer{

@@ -122,9 +122,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
         let latestNameAppear = gsap.timeline();
 
-        //let elementToAnim = element.children[1].children;
         let elementToAnim = element.querySelectorAll(`.latest__image-text .latest__image-anim`);
-        console.log(elementToAnim);
         
         latestNameAppear
             .from(elementToAnim, {
@@ -145,6 +143,47 @@ document.addEventListener('DOMContentLoaded', (event) => {
             latestNameAppear.reverse();
         });
     });
+
+    // SELECTED PROJECTS
+
+    /*let selectedContents = document.querySelectorAll('.selected__content');
+    let selectedImage = document.getElementById('selectedImage');
+
+    let mouseX, mouseY;
+
+    document.addEventListener('mousemove', event => {
+        mouseX = event.clientX;
+        mouseY = event.clientY;
+        //console.log('y: ', mouseY, ' x: ', mouseX);
+    });
+
+    selectedContents.forEach(element => {
+
+        element.addEventListener('mousemove', event => {            
+            selectedImage.setAttribute('style', `top: ${mouseY}px; left: ${mouseX}px;`);
+        })
+
+        element.addEventListener('mouseout', event => {            
+            selectedImage.setAttribute('style', `top: 50%; left: 50%;`);
+        })
+    });*/
+
+    let selectedProjects = gsap.timeline({
+        scrollTrigger: {
+            trigger: '#selectedProjects',
+            start: 'top top',
+            end: '400% bottom',
+            pin: true,
+            scrub: true,
+            scroller: "#app-scroll-container",
+            //markers: true
+        }
+    });
+
+    selectedProjects.to('.selected__wrapper',{
+        translateX: '-200%',
+        ease: 'linear'
+        });
                 
     /* ////////////////////////////////////////////////////////////////////////////// */
 
